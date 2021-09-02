@@ -1,0 +1,56 @@
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+<form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading" ngNativeValidate>
+<div class="grid">
+  <div class="login__container">
+    <div class="login__left">
+      <p class="login__title">
+        ĐĂNG NHẬP
+      </p>
+        <input class="login__input" placeholder="Email" name="email" ngModel type="email" placeholder="E-mail" #emailInput="ngModel" required email>
+        <input class="login__input" placeholder="Password" type="password" name="password" ngModel placeholder="Password" #passworInput="ngModel" required>
+        <div class="login__button">
+          <button class="login__button-continue button" type="submit" *ngIf="!isLoading">
+            Tiếp Tục
+          </button>
+          <button class="login__button-login button" routerLink="/auth/signup">
+            Đăng Ký
+          </button>
+        </div>
+      <div class="login__or">hoặc</div>
+      <button class="login__google-btn">
+        <div class="login__google">
+          <a href="" class="login__icon-link">
+            <i class="fab fa-google login__icon"></i>
+          </a>
+          <div class="login__google-text">Đăng nhập bằng Google</div>
+        </div>
+      </button>
+      <button class="login__facebook-btn">
+        <div class="login__facebook">
+          <a href="" class="login__icon-link">
+            <i class="fab fa-facebook login__icon"></i>
+          </a>
+          <div class="login__facebook-text">Đăng nhập bằng Facebook</div>
+        </div>
+      </button>
+    </div>
+    <div class="login__right">
+
+      <img src="../../assets/svg/Logo.svg" alt="" class="login__img">
+
+      <p class="login__slogan--1">
+        GIA NHẬP CÙNG CHÚNG TÔI
+      </p>
+      <p class="login__slogan--2">
+        Nhanh chóng
+      </p>
+      <p class="login__slogan--2">
+        Tiện lợi
+      </p>
+      <p class="login__slogan--2">
+        và An toàn
+      </p>
+    </div>
+  </div>
+</div>
+</form>

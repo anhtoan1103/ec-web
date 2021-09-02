@@ -1,0 +1,162 @@
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+<div class="grid">
+  <div class="register__container">
+    <div id="register__left" class="register__left">
+      <p class="register__title">
+        TẠO TÀI KHOẢN
+      </p>
+      <div class="register__social">
+
+        <a href="" class="register__icon-link">
+          <i class="fab fa-google register__icon"></i>
+        </a>
+        <a href="" class="register__icon-link">
+          <i class="fab fa-facebook register__icon"></i>
+        </a>
+      </div>
+      <p class="register__text">
+        hoặc đăng kí với email:
+      </p>
+      <form id="register__form-first"(submit)="onCheckExistEmail(checkEmailForm)" #checkEmailForm="ngForm" *ngIf="!isLoading" ngNativeValidate>
+        <input class="register__input"
+        placeholder="Email"
+        name="email"
+        ngModel type="email"
+        placeholder="E-mail"
+        #emailInput="ngModel"
+        required email
+        minlength="3"/>
+
+        <mat-error class="error" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched) ">
+          Please enter a valid email !
+        </mat-error>
+
+        <input class="register__input"
+        type="password" name="password1"
+        ngModel
+        placeholder="Password"
+          #passwordInput1="ngModel"
+          required
+          minlength="6"/>
+
+        <mat-error class="error" *ngIf="passwordInput1.invalid && (passwordInput1.dirty || passwordInput1.touched)">
+          Please enter a valid password !
+        </mat-error>
+
+        <input
+        class="register__input"
+        placeholder="Confirm Password"
+        type="password" name="password2"
+        ngModel
+        #passwordInput2="ngModel"
+         required />
+
+        <mat-error class="error" *ngIf="!passwordIsSame">
+          Two passwords must be same !
+        </mat-error>
+
+        <div class="register__button">
+          <button id="register__button-continue" class="register__button-continue button" type="submit">
+            Tiếp Tục
+          </button>
+          <button class="register__button-login button" routerLink="/auth/login">
+            Đăng Nhập
+          </button>
+        </div>
+      </form>
+      <div class="register__policy">
+        <p>
+          Bằng việc tiếp tục bạn đã chấp nhận
+        </p>
+        <a href="" class="register__policy-link">
+          điều khoản sử dụng
+        </a>
+      </div>
+    </div>
+    <div id="register__confirm" class="register__confirm">
+      <p class="register__title">
+        TẠO TÀI KHOẢN
+      </p>
+      <div class="register__confirm-text">Một mã xác nhận đã được gửi về mail của bạn Vui lòng nhập mã xác nhận vào ô
+        bên dưới để tiếp tục</div>
+      <input type="text" class="register__confirm-input" placeholder="Mã xác nhận">
+      <button id="register__button-continue--confirm" class="register__button-continue button" (click)="registerButtonContinue()">
+        Tiếp Tục
+      </button>
+    </div>
+    <form id="register__info-form" (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading" ngNativeValidate>
+    <div id="register__info" class="register__info">
+      <p class="register__title">
+        TẠO TÀI KHOẢN
+      </p>
+        <div class="register__info-name">
+          <input id="register__info-name" type="text" placeholder="Tên của bạn" name="name" ngModel>
+        </div>
+        <div class="register__info-phone">
+          <input id="register__info-phone" type="text" placeholder="Số điện thoại" name="phonenumber" ngModel>
+          <button id="register__info-phone--btn">Gửi Mã</button>
+        </div>
+        <div id="register__info-confirm" class="register__info-confirm">
+          <input id="register__info-confirm--input" type="text" placeholder="Mã xác nhận">
+        </div>
+        <div class="register__info-email">{{email}}</div>
+        <div class="register__info-gender" id="register__info-gender">
+          <div class="register__info-gender-choose" (click)="onGender()">
+            <p id="register__info-gender-choose">
+              Giới tính
+            </p>
+            <img src="../../assets/svg/Arrow.svg" alt="">
+          </div>
+          <div id="register__info-gender-menu" class="register__info-gender-menu">
+            <ul id="gender">
+              <li id="register__info-gender-item-1" class="register__info-gender-item" (click)="chooseMale()">Nam</li>
+              <li id="register__info-gender-item-2" class="register__info-gender-item" (click)="chooseFemale()">Nữ</li>
+              <li id="register__info-gender-item-3" class="register__info-gender-item" (click)="chooseAnotherGender()">Khác</li>
+            </ul>
+          </div>
+        </div>
+        <div id="register__info-type" class="register__info-type">
+          <div class="register__info-type-choose" (click)="onTypeSubmit()">
+            <p id="register__info-type-choose">
+              Bạn là
+            </p>
+            <img src="../../assets/svg/Arrow.svg" alt="">
+          </div>
+          <div id="register__info-type-menu" class="register__info-type-menu">
+            <ul id="typeUser">
+              <li id="register__info-type-item-1" class="register__info-type-item" (click)="onCustomer()">Người dùng cá nhân</li>
+              <li id="register__info-type-item-2" class="register__info-type-item" (click)="onDeliveryCompany()">Doanh nghiệp vận chuyển</li>
+            </ul>
+          </div>
+        </div>
+        <button id="register__info-btn" class="register__info-btn" type="submit">Xác Nhận</button>
+    </div>
+  </form>
+    <div class="register__complete">
+      <p class="register__title">
+        TẠO TÀI KHOẢN
+      </p>
+      <div class="register__complete-text">
+        Tài khoản của bạn được đăng ký thành công. Vui lòng đăng nhập để sử dụng dịch vụ của chúng tôi.
+      </div>
+      <button class="register__complete-btn">Tiếp Tục</button>
+    </div>
+    <div class="register__right">
+
+      <img src="../../assets/svg/Logo.svg" alt="" class="register__img">
+
+      <p class="register__slogan--1">
+        GIA NHẬP CÙNG CHÚNG TÔI
+      </p>
+      <p class="register__slogan--2">
+        Nhanh chóng
+      </p>
+      <p class="register__slogan--2">
+        Tiện lợi
+      </p>
+      <p class="register__slogan--2">
+        và An toàn
+      </p>
+    </div>
+  </div>
+</div>

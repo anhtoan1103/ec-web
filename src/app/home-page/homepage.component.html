@@ -1,0 +1,113 @@
+<div *ngIf="!userIsAuthenticated">
+  <div class="homepage-slogan">
+    <div class="slogan-text">Luôn bên bạn dù là ở bất cứ đâu</div>
+    <div class="slogan-text">Giao hàng nhanh chóng</div>
+    <div class="slogan-text">An toàn tuyệt đối</div>
+  </div>
+  <div class="homepage-introduce">
+    <div class="row">
+      <div class="column">
+        <div class="introduce-food row">
+          <div class="food-text1 column">Giao đồ ăn</div>
+          <div class="food-text2 column">
+            Tận hưởng món ăn bạn
+            yêu thích từ các nhà hàng
+            mà không cần ra ngoài.
+          </div>
+        </div>
+        <div class="link_register">
+          <img src="../../assets/svg/Arrow 1.svg" alt="">
+          <a href="/auth/signup">Đăng ký tài khoản Người dùng cá nhân</a>
+        </div>
+        <div class="familyImg">
+          <img src="../../assets/svg/image 11.svg" alt="">
+        </div>
+        <div class="introduce-food row">
+          <div class="food-text1 column">Dịch vụ giao hàng thu tiền hộ</div>
+          <div class="food-text2 column">
+            Bạn là Doanh nghiệp vận chuyển và bạn muốn quảng bá thương hiệu của mình?
+            Bạn muốn tiếp cận được nhiều khách hàng hơn?
+          </div>
+        </div>
+        <div class="link_register2">
+          <img src="../../assets/svg/Arrow 1.svg" alt="">
+          <a href="/auth/signup">Đăng ký tài khoản Shipper</a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="link_to-enterprise column-link">
+          <img class ="logo-img"src="../../assets/svg/image 9.svg" alt="" >
+          <a class="link" href="/auth/signup">Bạn là Doanh nghiệp vận chuyển? </a>
+        </div>
+        <div class="link_to-owner column-link">
+          <img class ="logo-img"src="../../assets/svg/image 12.svg" alt="" >
+          <a class="link" href="/auth/signup">Bạn là Chủ cửa hàng? </a>
+        </div>
+        <div class="link_to-user column-link">
+          <img class ="logo-img"src="../../assets/svg/image 8.svg" alt="" >
+          <a class="link" href="/auth/signup">Bạn là Người dùng cá nhân? </a>
+        </div>
+        <div class="introduce-food1 row">
+          <div class="food-text1 column">Dịch vụ giao hàng thu tiền hộ</div>
+          <div class="food-text2 column">
+            Bạn cần tìm đơn vị giao hàng uy tín, nhanh chóng và an toàn?
+            Bạn muốn có nhiều sự lựa chọn giao hàng?
+          </div>
+        </div>
+        <div class="link_register2">
+          <img src="../../assets/svg/Arrow 1.svg" alt="">
+          <a href="/auth/signup">Đăng ký tài khoản Cửa hàng</a>
+        </div>
+        <div class="familyImg1">
+          <img src="../../assets/svg/image 13.svg" alt="">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="delivery">
+    <div class="delivery-title">
+      Hơn 100 Đơn vị vận chuyển lớn nhỏ đã bắt tay cùng chúng tôi
+    </div>
+    <div class="delivery-brand">
+      <div class="row">
+        <div class="column">
+          <div class="delivery-logo">
+            <img src="../../assets/svg/image 18.svg" alt="">
+          </div>
+          <div class="delivery-logo">
+            <img src="../../assets/svg/image 16.svg" alt="">
+          </div>
+          <div class="delivery-logo">
+            <img src="../../assets/svg/image 20.svg" alt="">
+          </div>
+        </div>
+        <div class="column">
+          <div class="delivery-logo">
+            <img src="../../assets/svg/image 19.svg" alt="">
+          </div>
+          <div class="delivery-logo">
+            <img src="../../assets/svg/image 21.svg" alt="">
+          </div>
+          <div class="delivery-logo">
+            <img src="../../assets/svg/image 17.svg" alt="">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="homepage-slogan">
+    <div class="slogan-text2">Biểu phí</div>
+    <div class="slogan-text3">
+      Cập nhật những thông tin về biểu phí của chúng tôi
+      <img src="../../assets/svg/Arrow 4.svg" alt="">
+    </div>
+  </div>
+
+</div>
+<app-product *ngIf="userIsAuthenticated"></app-product>
